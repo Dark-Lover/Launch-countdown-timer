@@ -1,0 +1,18 @@
+{
+  "name": "17_launch-countdown-timer-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Launch countdown timer coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "sass": "^1.34.1"
+  },
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "prod": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}
