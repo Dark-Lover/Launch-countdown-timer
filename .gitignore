@@ -17,5 +17,5 @@
 
 # Avoid dist, cache, node_modules folder
 .cache
-dist 
 node_modules
+dist 
