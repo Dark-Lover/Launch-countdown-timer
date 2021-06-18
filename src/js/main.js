@@ -30,6 +30,15 @@ const addZero = function (val) {
   if (val < 10) return "0" + val;
   else return val;
 };
+
+const timeComparison = function (oldVal, newVal, $el) {
+  if (newVal !== oldVal) {
+    $el.parentElement.querySelector(".flip_box").classList.add("active");
+    $el.textContent = addZero(newVal);
+  } else
+    $el.parentElement.querySelector(".flip_box").classList.remove("active");
+};
+
 // Reset the Timer
 const resetUi = function () {
   day_output.textContent = addZero(0);
@@ -43,40 +52,48 @@ const updateUi2 = function (dy, hr, min, sec) {
   let oldHr = Number(hour_output.textContent);
   let oldMin = Number(minute_output.textContent);
   let oldSec = Number(second_output.textContent);
-  if (dy !== oldDay) {
-    day_output.parentElement.querySelector(".flip_box").classList.add("active");
-    day_output.textContent = addZero(dy);
-  } else
-    day_output.parentElement
-      .querySelector(".flip_box")
-      .classList.remove("active");
-  if (hr !== oldHr) {
-    hour_output.parentElement
-      .querySelector(".flip_box")
-      .classList.add("active");
-    hour_output.textContent = addZero(hr);
-  } else
-    hour_output.parentElement
-      .querySelector(".flip_box")
-      .classList.remove("active");
-  if (min !== oldMin) {
-    minute_output.parentElement
-      .querySelector(".flip_box")
-      .classList.add("active");
-    minute_output.textContent = addZero(min);
-  } else
-    minute_output.parentElement
-      .querySelector(".flip_box")
-      .classList.remove("active");
-  if (sec !== oldSec && sec !== 0) {
-    second_output.parentElement
-      .querySelector(".flip_box")
-      .classList.add("active");
-    second_output.textContent = addZero(sec);
-  } else
-    second_output.parentElement
-      .querySelector(".flip_box")
-      .classList.remove("active");
+  timeComparison(oldDay, dy, day_output);
+  timeComparison(oldHr, hr, hour_output);
+  timeComparison(oldMin, min, minute_output);
+  timeComparison(oldSec, sec, second_output);
+  // ! day comparison
+  // if (dy !== oldDay) {
+  //   day_output.parentElement.querySelector(".flip_box").classList.add("active");
+  //   day_output.textContent = addZero(dy);
+  // } else
+  //   day_output.parentElement
+  //     .querySelector(".flip_box")
+  //     .classList.remove("active");
+  // ! hour comparison
+  // if (hr !== oldHr) {
+  //   hour_output.parentElement
+  //     .querySelector(".flip_box")
+  //     .classList.add("active");
+  //   hour_output.textContent = addZero(hr);
+  // } else
+  //   hour_output.parentElement
+  //     .querySelector(".flip_box")
+  //     .classList.remove("active");
+  // ! minute comparison
+  // if (min !== oldMin) {
+  //   minute_output.parentElement
+  //     .querySelector(".flip_box")
+  //     .classList.add("active");
+  //   minute_output.textContent = addZero(min);
+  // } else
+  //   minute_output.parentElement
+  //     .querySelector(".flip_box")
+  //     .classList.remove("active");
+  // ! second comparison
+  // if (sec !== oldSec && sec !== 0) {
+  //   second_output.parentElement
+  //     .querySelector(".flip_box")
+  //     .classList.add("active");
+  //   second_output.textContent = addZero(sec);
+  // } else
+  //   second_output.parentElement
+  //     .querySelector(".flip_box")
+  //     .classList.remove("active");
 };
 
 resetUi();
