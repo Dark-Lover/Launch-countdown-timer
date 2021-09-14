@@ -7,10 +7,8 @@ let startTime = new Date().getTime();
 // Time manipulation
 const mytimer1 = setInterval(() => {
   let nowTime = new Date().getTime();
-  console.log(nowTime);
   let deadTime = startTime + 14 * 24 * 60 * 60 * 1000;
   let difference = deadTime - nowTime;
-  console.log(difference);
   if (difference >= 0) {
     let day_rem = Math.floor(difference / 86400000);
     let hour_rem = Math.floor((difference % 86400000) / 3600000);
